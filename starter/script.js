@@ -298,3 +298,5 @@ forecastDiv(day5, image5, temp5, wind5, humidity5);
 });
 });
 
+// Function call to get data for local storage and load it to the page
+begin();
