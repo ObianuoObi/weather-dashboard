@@ -22,3 +22,12 @@ function createButtons (array) {
     });
 }
 
+// function that gets cities from local storage and calls the function createButtons
+
+function begin () {
+    buttonName = JSON.parse(localStorage.getItem('buttonName')) || [];
+    createButtons(buttonName);
+}
+
+
+
