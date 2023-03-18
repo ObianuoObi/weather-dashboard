@@ -125,4 +125,28 @@ function getOpenWeatherIndexDay3 (currentHour) {
     } return index;
 }
 
+// Fourth function that change the indexes of the array returned from openweather
+// according to the current time of the day, They are updated every 3 hours
+
+function getOpenWeatherIndexDay4 (currentHour) {
+    let index = 24
+    if (currentHour >= 0 && currentHour <= 2) {
+        index = 24;   
+    } else if (currentHour >= 3 && currentHour <= 5) {
+        index = 25;        
+    } else if (currentHour >= 6 && currentHour <= 8) {
+        index = 26;
+    } else if (currentHour >= 9 && currentHour <= 11) {
+        index = 27;
+    } else if (currentHour >= 12 && currentHour <= 14) {
+        index = 28;
+    } else if (currentHour >= 15 && currentHour <= 17) {
+        index = 29;
+    } else if (currentHour >= 18 && currentHour <= 20) {
+        index = 30;
+    } else if (currentHour >= 21 && currentHour <= 23) {
+        index = 31;
+    } return index;
+}
+
 
