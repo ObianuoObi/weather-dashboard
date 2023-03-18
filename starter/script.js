@@ -199,3 +199,27 @@ $("#search-button").on("click", function(event) {
           // Api endpoint that returns 5 days forecast 
           let queryWeatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric&appid=c0dc7393199102d72532d4047b790df6";
 
+
+           // Ajax Api call that returns current weather data and populates the given days div
+           $.ajax({
+            url: queryCurrentURL,
+            method: "GET"
+        })
+        .then(function(response) {
+            
+            // Populate given days div
+            $('#today').empty();
+            let currentDay = moment().format("DD/M/YYYY");
+            let currentTemp = response.main.temp;
+            let currentWind = response.wind.speed;
+            let currentHumidity = response.main.humidity;
+            
+            let currentWeather = $(`<div>
+                                        <h2>${city} (${currentDay})</h2>
+                                        <p>Temp: ${currentTemp} C</p>
+                                        <p>Wind: ${currentWind} KPH</p>
+                                        <p>Humidity: ${currentHumidity}</p>
+                                    </div>`);
+            $('#today').append(currentWeather);
+
+
