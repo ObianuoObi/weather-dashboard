@@ -234,3 +234,16 @@ $("#search-button").on("click", function(event) {
 
 $('#forecast').empty();                
 let currentHour = moment().format("H");
+
+// Forecast data for first day 
+
+let day1 = moment(response.list[1].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/YYYY");
+                let i1 = getOpenWeatherIndexDay1(currentHour);
+
+                let image1 = response.list[i1].weather[0].description;
+                let temp1 = response.list[i1].main.temp;
+                let wind1 = response.list[i1].wind.speed;
+                let humidity1 = response.list[i1].main.humidity;
+
+                forecastDataDiv(day1, image1, temp1, wind1, humidity1);
+                
