@@ -222,4 +222,10 @@ $("#search-button").on("click", function(event) {
                                     </div>`);
             $('#today').append(currentWeather);
 
+            // Ajax Api call that returns 5 days forecast data
 
+            $.ajax({
+                url: queryWeatherURL,
+                method: "GET"
+            })
+            .then(function(response) {
