@@ -270,3 +270,16 @@ let day2 = moment(response.list[9].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/Y
                 let humidity3 = response.list[i3].main.humidity;
 
                 forecastDivData(day3, image3, temp3, wind3, humidity3);
+
+// Forecast data for fourth day
+let day4 = moment(response.list[25].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/YYYY");
+                let i4 = getOpenWeatherIndexDay4(currentHour);
+
+                let image4 = response.list[i4].weather[0].description;
+                let temp4 = response.list[i4].main.temp;
+                let wind4 = response.list[i4].wind.speed;
+                let humidity4 = response.list[i4].main.humidity;
+
+                forecastDivData(day4, image4, temp4, wind4, humidity4);
+
+
