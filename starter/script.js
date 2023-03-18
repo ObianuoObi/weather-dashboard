@@ -183,4 +183,12 @@ $("#search-button").on("click", function(event) {
 
     let queryGeoURL = "https://api.openweathermap.org/geo/1.0/direct?q="+city+"&limit=5&appid=c0dc7393199102d72532d4047b790df6";
 
-    
+    // First api call, used to get data to trigger second api call 
+
+    $.ajax({
+        url: queryGeoURL,
+        method: "GET"
+    })
+    .then(function(response) {
+        let lat = response[0].lat;            
+        let lon = response[0].lon;
