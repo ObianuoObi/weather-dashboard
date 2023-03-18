@@ -282,4 +282,19 @@ let day4 = moment(response.list[25].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/
 
                 forecastDivData(day4, image4, temp4, wind4, humidity4);
 
+// Forecast data for fifth day
+let day5 = moment(response.list[33].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/YYYY");
+        let i5 = getIndexDay5(currentHour);
+
+        let image5 = response.list[i5].weather[0].description;
+        let temp5 = response.list[i5].main.temp;
+        let wind5 = response.list[i5].wind.speed;
+        let humidity5 = response.list[i5].main.humidity;
+
+forecastDiv(day5, image5, temp5, wind5, humidity5);      
+
+});
+});
+});
+});
 
