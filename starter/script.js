@@ -27,7 +27,16 @@ function createButtons (array) {
 function begin () {
     buttonName = JSON.parse(localStorage.getItem('buttonName')) || [];
     createButtons(buttonName);
+
 }
 
+// function that checks if buttonName contains city and pushes a new city and saves the updated array to local storage if theres no new city 
 
+function buttonsCity (city) {
+    if (city != '' && buttonName.includes(city) != true) {        
+        buttonName.push(city); 
+        localStorage.setItem('buttonName', JSON.stringify(buttonName));
+        createButtons(buttonName);
+    }
+}
 
