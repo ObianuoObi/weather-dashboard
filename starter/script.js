@@ -196,3 +196,6 @@ $("#search-button").on("click", function(event) {
           // Api endpoint that returns current weather
           let queryCurrentURL = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=c0dc7393199102d72532d4047b790df6";
 
+          // Api endpoint that returns 5 days forecast 
+          let queryWeatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&units=metric&appid=c0dc7393199102d72532d4047b790df6";
+
