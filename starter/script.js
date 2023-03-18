@@ -245,5 +245,17 @@ let day1 = moment(response.list[1].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/Y
                 let wind1 = response.list[i1].wind.speed;
                 let humidity1 = response.list[i1].main.humidity;
 
-                forecastDataDiv(day1, image1, temp1, wind1, humidity1);
+                forecastDivData(day1, image1, temp1, wind1, humidity1);
                 
+// Forecast data for second day
+
+let day2 = moment(response.list[9].dt_txt, "YYYY-MM-DD HH:mm:ss").format("DD/M/YYYY");
+                let i2 = getOpenWeatherIndexDay2(currentHour);
+
+                let image2 = response.list[i2].weather[0].description;
+                let temp2 = response.list[i2].main.temp;
+                let wind2 = response.list[i2].wind.speed;
+                let humidity2 = response.list[i2].main.humidity;
+
+                forecastDivData(day2, image2, temp2, wind2, humidity2);
+
