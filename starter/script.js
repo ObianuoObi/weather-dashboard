@@ -172,3 +172,15 @@ function getOpenWeatherIndexDay5 (currentHour) {
         index = 39;
     } return index;
 }
+
+// On click event that triggers the api call
+
+$("#search-button").on("click", function(event) {
+    event.preventDefault();
+
+    let city = $('#search-input').val();
+    buttonsCity(city);   
+
+    let queryGeoURL = "https://api.openweathermap.org/geo/1.0/direct?q="+city+"&limit=5&appid=c0dc7393199102d72532d4047b790df6";
+
+    
