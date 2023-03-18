@@ -40,3 +40,19 @@ function buttonsCity (city) {
     }
 }
 
+// Function that creates a div with the forecast data
+
+function forecastDivData (day, image, temp, wind, humidity) {
+    let weather = $(`<div class="col forecast-tiles">
+                        <h3>${day}</h3>
+                        <p>${image}</p>
+                        <p>Temp: ${temp} C</p>
+                        <p>Wind: ${wind} KPH</p>
+                        <p>Humidity: ${humidity}</p>
+                    </div>`);
+    $('#forecast').append(weather);
+}
+
+
+
+
