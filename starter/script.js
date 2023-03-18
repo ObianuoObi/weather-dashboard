@@ -229,3 +229,8 @@ $("#search-button").on("click", function(event) {
                 method: "GET"
             })
             .then(function(response) {
+
+// Populate forecast's div    
+
+$('#forecast').empty();                
+let currentHour = moment().format("H");
